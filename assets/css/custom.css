@@ -1,3 +1,61 @@
+/* Theme tokens */
+:root {
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #666666;
+  --link: #0b62c4;
+  --border: #e5e5e5;
+}
+
+html[data-theme="dark"] {
+  --bg: #0f1115;
+  --fg: #e6e6e6;
+  --muted: #9aa0a6;
+  --link: #8ab4f8;
+  --border: #2a2f3a;
+}
+
+/* Apply tokens */
+body {
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.65;
+}
+
+/* Headings and text */
+h1, h2, h3 { margin-top: 1.2em; }
+small { color: var(--muted); }
+
+/* Links */
+a { color: var(--link); }
+a:visited { color: var(--link); }
+
+/* Page width */
+.page { max-width: 800px; }
+
+/* Code blocks, tables, borders */
+pre, code, kbd, samp { background: transparent; color: var(--fg); }
+blockquote, hr, table, th, td {
+  border-color: var(--border) !important;
+}
+table { color: var(--fg); }
+
+/* Theme toggle button */
+#theme-toggle {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--fg);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+#theme-toggle:focus { outline: 2px solid var(--border); outline-offset: 2px; }
+
+
 /* Simple typography & layout adjustments */
 body { line-height: 1.65; }
 h1, h2, h3 { margin-top: 1.2em; }
