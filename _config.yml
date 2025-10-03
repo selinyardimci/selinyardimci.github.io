@@ -1,0 +1,18 @@
+title: Selin — Economics
+description: "Academic website for Selin, PhD candidate in Economics."
+url: ""  # set to your GitHub Pages site url later
+baseurl: ""  # leave empty for user.github.io root
+theme: jekyll-theme-minimal
+logo: /assets/img/profile.jpg
+show_downloads: false
+google_analytics:  # add your GA ID if desired
+
+# Social links (fill in your usernames/links)
+github_username: your-github-username
+scholar: https://scholar.google.com/citations?user=YOUR_ID
+twitter_username: 
+linkedin: https://www.linkedin.com/in/YOUR_ID
+
+# Build settings
+markdown: kramdown
+permalink: /:title/
