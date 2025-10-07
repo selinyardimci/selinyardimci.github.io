@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Selin YARDIMCI — PhD Candidate in Economics</title>
+  <meta name="description" content="Academic website of Selin Yardımcı, PhD Candidate in Economics at CREM, University of Rennes." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --violet: #5b2c83;       /* deep violet for links */
+      --violet-strong: #4a1f73;/* hover/darker variant */
+      --bg: #ffffff;
+      --text: #1f2937;         /* slate-800 */
+      --muted: #4b5563;        /* slate-600 */
+      --panel: #f8fafc;        /* slate-50 */
+      --border: #e5e7eb;       /* slate-200 */
+    }
+    /* Dark theme tokens */
+    .dark {
+      --bg: #0b1020;           /* near-navy */
+      --text: #e5e7eb;         /* slate-200 */
+      --muted: #cbd5e1;        /* slate-300 */
+      --panel: #111827;        /* gray-900 */
+      --border: #1f2937;       /* gray-800 */
+      --violet: #bf9cff;       /* brightened for contrast */
+      --violet-strong: #a07aff;
+    }
+
+    html, body {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    a { color: var(--violet); text-decoration: none; border-bottom: 1px solid transparent; transition: color .15s ease, background-color .15s ease, border-color .15s ease, box-shadow .15s ease; }
+    a:hover, a:focus-visible { color: var(--violet-strong); border-color: var(--violet-strong); outline: none; box-shadow: 0 1px 0 var(--violet-strong); }
+
+    .layout { display: grid; grid-template-columns: 280px 1fr; min-height: 100%; }
+
+    /* Sidebar */
+    .sidebar { background: var(--panel); border-right: 1px solid var(--border); padding: 24px 20px; position: sticky; top: 0; height: 100vh; box-sizing: border-box; }
+    .brand { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 16px; }
+    .brand h1 { font-size: 18px; margin: 0; font-weight: 700; letter-spacing: .2px; }
+
+    .photo-wrap { display: grid; place-items: center; margin: 12px 0 16px; }
+    .photo {
+      width: 180px; height: 180px; border-radius: 50%; object-fit: cover; object-position: center; border: 4px solid var(--border); background: #ddd; box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    }
+
+    .nav { display: grid; gap: 10px; margin-top: 10px; }
+    .btn-link { display: inline-flex; align-items: center; justify-content: center; padding: 10px 14px; border: 1px solid var(--border); background: var(--bg); color: var(--text); border-radius: 999px; font-weight: 600; }
+    .btn-link:hover { border-color: var(--violet-strong); color: var(--violet-strong); box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+
+    .muted { color: var(--muted); font-size: 13px; }
+
+    .toggle { border: 1px solid var(--border); background: var(--bg); color: var(--text); border-radius: 999px; padding: 8px 12px; cursor: pointer; font-weight: 600; }
+    .toggle:hover { border-color: var(--violet-strong); color: var(--violet-strong); }
+
+    /* Main */
+    .main { padding: 40px 48px; max-width: 1100px; }
+    .hero { max-width: 820px; }
+    .name { font-size: 40px; line-height: 1.15; margin: 0 0 6px; font-weight: 800; letter-spacing: .2px; }
+    .title { font-size: 20px; margin: 0 0 28px; color: var(--muted); font-weight: 600; }
+    .lead { font-size: 18px; line-height: 1.7; margin-bottom: 16px; }
+
+    .quicklinks { display: flex; gap: 16px; flex-wrap: wrap; margin: 16px 0 28px; }
+    .quicklinks a { font-weight: 700; }
+
+    .section { margin-top: 34px; }
+    .section h2 { font-size: 18px; margin: 0 0 10px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
+    .news { list-style: none; padding: 0; margin: 0; border-left: 2px solid var(--border); }
+    .news li { padding: 10px 12px 10px 14px; position: relative; }
+    .news li::before { content: ""; position: absolute; left: -6px; top: 18px; width: 8px; height: 8px; background: var(--violet); border-radius: 50%; }
+
+    .footer { margin-top: 44px; font-size: 13px; color: var(--muted); }
+
+    /* Responsive */
+    @media (max-width: 920px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: static; height: auto; }
+      .main { padding: 24px; }
+      .photo { width: 140px; height: 140px; }
+      .name { font-size: 34px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar" aria-label="Left column navigation and photo">
+      <div class="brand">
+        <h1><a href="index.html" aria-label="Home">Selin Yardımcı</a></h1>
+        <button id="themeToggle" class="toggle" type="button" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+      </div>
+      <div class="photo-wrap">
+        <!-- Replace the src below with your own photo path, e.g., assets/selin.jpg -->
+        <img class="photo" src="assets/selin.png" width="180" height="180" alt="Portrait of Selin Yardımcı" />
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a class="btn-link" href="index.html">Home</a>
+        <a class="btn-link" href="research.html">Research</a>
+        <a class="btn-link" href="teaching.html">Teaching</a>
+        <a class="btn-link" href="cv.html">CV</a>
+        <a class="btn-link" href="contact.html">Contact</a>
+        <!-- Update the LinkedIn URL below -->
+        <a class="btn-link" href="https://www.linkedin.com/in/selinyardimci/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+      <p class="muted" style="margin-top:14px">© <span id="year"></span> Selin Yardımcı</p>
+    </aside>
+
+    <main class="main" id="mainContent">
+      <header class="hero">
+        <h2 class="name">Selin YARDIMCI</h2>
+        <p class="title">PhD Candidate in Economics</p>
+        <p class="lead">
+          Welcome to my website. I am a PhD candidate in Economics at the CREM, University of Rennes, in France. My research relates to Digital Economics. Alongside my doctoral studies, I currently serve as an Assistant Lecturer, a position I will hold until September 2026.
+        </p>
+        <p class="lead"><strong>I am on the 2026/2027 academic job market.</strong></p>
+        <p class="lead"><strong>Research fields:</strong> applied microeconomics, microeconometrics, industrial organization<br>
+        <strong>Email:</strong> <a href="mailto:selin.yardimci@univ-rennes.fr">selin.yardimci@univ-rennes.fr</a></p>
+
+        <div class="quicklinks" aria-label="Quick links">
+          <a href="research.html">Research</a>
+          <a href="teaching.html">Teaching</a>
+          <a href="cv.html">CV</a>
+          <a href="contact.html">Contact</a>
+          <a href="#news">News</a>
+        </div>
+      </header>
+
+      <section class="section" id="news" aria-labelledby="newsHeading">
+        <h2 id="newsHeading">News</h2>
+        <ul class="news">
+          <li><strong>[Sept 2025]</strong> Presented at La Journée CREM - CREST - SMART, Rennes.</li>
+          <li><strong>[Sept 2025]</strong> Assistant Lecturer (ATER) at the University of Rennes.</li>
+          <li><strong>[June 2025]</strong> Presented at Journées de Microéconomie Appliquée (JMA), Poitiers.</li>
+        </ul>
+      </section>
+
+      <p class="footer">Last updated: <time id="lastUpdated" datetime="2025-10-07">7 Oct 2025</time></p>
+    </main>
+  </div>
+
+  <script>
+    // ---------- Theme persistence (works across pages) ----------
+    (function() {
+      const STORAGE_KEY = 'site-theme';
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const saved = localStorage.getItem(STORAGE_KEY);
+      const root = document.documentElement; // <html>
+
+      function apply(theme) {
+        if (theme === 'dark') {
+          root.classList.add('dark');
+        } else {
+          root.classList.remove('dark');
+        }
+        const btn = document.getElementById('themeToggle');
+        if (btn) btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+      }
+
+      // Initialize
+      apply(saved ? saved : (prefersDark ? 'dark' : 'light'));
+
+      // Toggle handler
+      const toggle = document.getElementById('themeToggle');
+      if (toggle) {
+        toggle.addEventListener('click', () => {
+          const next = root.classList.contains('dark') ? 'light' : 'dark';
+          localStorage.setItem(STORAGE_KEY, next);
+          apply(next);
+        });
+      }
+
+      // Footer year
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+
+  <!--
+    ===== Notes for GitHub Pages setup =====
+    1) Create a repo named username.github.io (or a project site). Place this file as index.html.
+    2) Add additional pages: research.html, teaching.html, cv.html, contact.html.
+       Copy the <head>, sidebar, and theme script into each page so the style and theme persist.
+       The theme persistence uses localStorage, so it will carry over automatically.
+    3) Replace the placeholder photo src with your portrait (e.g., /assets/selin.jpg) and update the LinkedIn URL.
+    4) Optional: create /assets/ and /css/ folders if you prefer external files.
+  -->
+</body>
+</html>

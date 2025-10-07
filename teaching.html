@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teaching — Selin YARDIMCI</title>
+  <meta name="description" content="Teaching page of Selin Yardımcı." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --violet:#5b2c83; --violet-strong:#4a1f73; --bg:#ffffff; --text:#1f2937; --muted:#4b5563; --panel:#f8fafc; --border:#e5e7eb; }
+    .dark { --bg:#0b1020; --text:#e5e7eb; --muted:#cbd5e1; --panel:#111827; --border:#1f2937; --violet:#bf9cff; --violet-strong:#a07aff; }
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text)}
+    a{color:var(--violet);text-decoration:none;border-bottom:1px solid transparent;transition:color .15s,border-color .15s,box-shadow .15s}
+    a:hover,a:focus-visible{color:var(--violet-strong);border-color:var(--violet-strong);outline:none;box-shadow:0 1px 0 var(--violet-strong)}
+    .layout{display:grid;grid-template-columns:280px 1fr;min-height:100%}
+    .sidebar{background:var(--panel);border-right:1px solid var(--border);padding:24px 20px;position:sticky;top:0;height:100vh;box-sizing:border-box}
+    .brand{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:16px}
+    .brand h1{font-size:18px;margin:0;font-weight:700}
+    .photo-wrap{display:grid;place-items:center;margin:12px 0 16px}
+    .photo{width:180px;height:180px;border-radius:50%;object-fit:cover;border:4px solid var(--border);background:#ddd;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+    .nav{display:grid;gap:10px;margin-top:10px}
+    .btn-link{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border:1px solid var(--border);background:var(--bg);color:var(--text);border-radius:999px;font-weight:600}
+    .btn-link:hover{border-color:var(--violet-strong);color:var(--violet-strong);box-shadow:0 2px 10px rgba(0,0,0,.08)}
+    .toggle{border:1px solid var(--border);background:var(--bg);color:var(--text);border-radius:999px;padding:8px 12px;cursor:pointer;font-weight:600}
+    .toggle:hover{border-color:var(--violet-strong);color:var(--violet-strong)}
+    .main{padding:40px 48px;max-width:1100px}
+    .page-title{font-size:28px;margin:0 0 8px;font-weight:800}
+    .muted{color:var(--muted);font-size:13px}
+    .section{margin-top:28px}
+    .course{border:1px solid var(--border);border-radius:16px;padding:16px 18px;margin-bottom:14px;background:var(--panel)}
+    .course h3{margin:0 0 6px;font-size:18px}
+    .course .meta{font-size:14px;color:var(--muted)}
+    @media (max-width:920px){.layout{grid-template-columns:1fr}.sidebar{position:static;height:auto}.main{padding:24px}.photo{width:140px;height:140px}}
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1><a href="index.html">Selin Yardımcı</a></h1>
+        <button id="themeToggle" class="toggle" type="button" aria-pressed="false">🌙</button>
+      </div>
+      <div class="photo-wrap">
+        <img class="photo" src="https://via.placeholder.com/360" alt="Portrait of Selin Yardımcı" width="180" height="180" />
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a class="btn-link" href="index.html">Home</a>
+        <a class="btn-link" href="research.html">Research</a>
+        <a class="btn-link" href="teaching.html">Teaching</a>
+        <a class="btn-link" href="cv.html">CV</a>
+        <a class="btn-link" href="contact.html">Contact</a>
+        <a class="btn-link" href="https://www.linkedin.com/in/selinyardimci/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+      <p class="muted" style="margin-top:14px">© <span id="year"></span> Selin Yardımcı</p>
+    </aside>
+
+    <main class="main">
+      <h2 class="page-title">Teaching</h2>
+      <p>Assistant Lecturer (ATER), University of Rennes. Below are selected courses and materials.</p>
+
+      <section class="section" aria-labelledby="c1">
+        <article class="course">
+          <h3 id="c1">Microeconomics (Undergraduate)</h3>
+          <p class="meta">2025–2026 · Tutorials and Lectures</p>
+          <p><a href="#">Syllabus (PDF)</a> · <a href="#">Problem sets</a> · <a href="#">Slides</a></p>
+        </article>
+        <article class="course">
+          <h3>Econometrics (Intro)</h3>
+          <p class="meta">2025–2026 · Labs in R/Stata</p>
+          <p><a href="#">Syllabus (PDF)</a> · <a href="#">Datasets</a> · <a href="#">Code</a></p>
+        </article>
+      </section>
+
+      <section class="section" aria-labelledby="office">
+        <h3 id="office">Office hours</h3>
+        <p>By appointment. Email: <a href="mailto:selin.yardimci@univ-rennes.fr">selin.yardimci@univ-rennes.fr</a></p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    (function(){
+      const STORAGE_KEY='site-theme';
+      const prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const saved=localStorage.getItem(STORAGE_KEY);
+      const root=document.documentElement;
+      function apply(t){t==='dark'?root.classList.add('dark'):root.classList.remove('dark');
+        const btn=document.getElementById('themeToggle'); if(btn) btn.setAttribute('aria-pressed', t==='dark'?'true':'false');}
+      apply(saved?saved:(prefersDark?'dark':'light'));
+      const toggle=document.getElementById('themeToggle');
+      if(toggle){toggle.addEventListener('click',()=>{const next=root.classList.contains('dark')?'light':'dark';localStorage.setItem(STORAGE_KEY,next);apply(next);});}
+      const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
