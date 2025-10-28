@@ -30,10 +30,6 @@
     .muted{color:var(--muted);font-size:13px}
     .section{margin-top:28px}
     .card{border:1px solid var(--border);border-radius:16px;padding:16px 18px;margin-bottom:14px;background:var(--panel)}
-    form{display:grid;gap:12px}
-    input, textarea{padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text)}
-    button[type=submit]{padding:10px 14px;border:1px solid var(--border);background:var(--bg);border-radius:999px;font-weight:700;cursor:pointer}
-    button[type=submit]:hover{border-color:var(--violet-strong);color:var(--violet-strong)}
     @media (max-width:920px){.layout{grid-template-columns:1fr}.sidebar{position:static;height:auto}.main{padding:24px}.photo{width:140px;height:140px}}
   </style>
 </head>
@@ -43,56 +39,3 @@
       <div class="brand">
         <h1><a href="index.html">Selin Yardımcı</a></h1>
         <button id="themeToggle" class="toggle" type="button" aria-pressed="false">🌙</button>
-      </div>
-      <div class="photo-wrap">
-        <img class="photo" src="assets/selin.png" alt="Portrait of Selin Yardımcı" width="180" height="180" />
-      </div>
-      <nav class="nav" aria-label="Primary">
-        <a class="btn-link" href="index.html">Home</a>
-        <a class="btn-link" href="research.html">Research</a>
-        <a class="btn-link" href="teaching.html">Teaching</a>
-        <a class="btn-link" href="cv.html">CV</a>
-        <a class="btn-link" href="contact.html">Contact</a>
-        <a class="btn-link" href="https://www.linkedin.com/in/selinyardimci/" target="_blank" rel="noopener">LinkedIn</a>
-      </nav>
-      <p class="muted" style="margin-top:14px">© <span id="year"></span> Selin Yardımcı</p>
-    </aside>
-
-    <main class="main">
-      <h2 class="page-title">Contact</h2>
-      <section class="section">
-        <div class="card">
-          <p><strong>Email:</strong> <a href="mailto:selin.yardimci@univ-rennes.fr">selin.yardimci@univ-rennes.fr</a></p>
-          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/selinyardimci/" target="_blank" rel="noopener">/selinyardimci</a></p>
-        </div>
-      </section>
-
-      <section class="section">
-        <h3>Send me a message</h3>
-        <form action="mailto:selin.yardimci@univ-rennes.fr" method="post" enctype="text/plain">
-          <input type="text" name="name" placeholder="Your name" required>
-          <input type="email" name="email" placeholder="Your email" required>
-          <textarea name="message" rows="6" placeholder="Your message"></textarea>
-          <button type="submit">Send</button>
-        </form>
-        <p class="muted">(This form opens your email client. For guaranteed delivery, email me directly.)</p>
-      </section>
-    </main>
-  </div>
-
-  <script>
-    (function(){
-      const STORAGE_KEY='site-theme';
-      const prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const saved=localStorage.getItem(STORAGE_KEY);
-      const root=document.documentElement;
-      function apply(t){t==='dark'?root.classList.add('dark'):root.classList.remove('dark');
-        const btn=document.getElementById('themeToggle'); if(btn) btn.setAttribute('aria-pressed', t==='dark'?'true':'false');}
-      apply(saved?saved:(prefersDark?'dark':'light'));
-      const toggle=document.getElementById('themeToggle');
-      if(toggle){toggle.addEventListener('click',()=>{const next=root.classList.contains('dark')?'light':'dark';localStorage.setItem(STORAGE_KEY,next);apply(next);});}
-      const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
-    })();
-  </script>
-</body>
-</html>
