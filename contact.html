@@ -30,10 +30,6 @@
     .muted{color:var(--muted);font-size:13px}
     .section{margin-top:28px}
     .card{border:1px solid var(--border);border-radius:16px;padding:16px 18px;margin-bottom:14px;background:var(--panel)}
-    form{display:grid;gap:12px}
-    input, textarea{padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text)}
-    button[type=submit]{padding:10px 14px;border:1px solid var(--border);background:var(--bg);border-radius:999px;font-weight:700;cursor:pointer}
-    button[type=submit]:hover{border-color:var(--violet-strong);color:var(--violet-strong)}
     @media (max-width:920px){.layout{grid-template-columns:1fr}.sidebar{position:static;height:auto}.main{padding:24px}.photo{width:140px;height:140px}}
   </style>
 </head>
@@ -65,17 +61,6 @@
           <p><strong>Email:</strong> <a href="mailto:selin.yardimci@univ-rennes.fr">selin.yardimci@univ-rennes.fr</a></p>
           <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/selinyardimci/" target="_blank" rel="noopener">/selinyardimci</a></p>
         </div>
-      </section>
-
-      <section class="section">
-        <h3>Send me a message</h3>
-        <form action="mailto:selin.yardimci@univ-rennes.fr" method="post" enctype="text/plain">
-          <input type="text" name="name" placeholder="Your name" required>
-          <input type="email" name="email" placeholder="Your email" required>
-          <textarea name="message" rows="6" placeholder="Your message"></textarea>
-          <button type="submit">Send</button>
-        </form>
-        <p class="muted">(This form opens your email client. For guaranteed delivery, email me directly.)</p>
       </section>
     </main>
   </div>
