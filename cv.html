@@ -34,6 +34,7 @@
     @media (max-width:920px){.layout{grid-template-columns:1fr}.sidebar{position:static;height:auto}.main{padding:24px}.photo{width:140px;height:140px}}
   </style>
 </head>
+
 <body>
   <div class="layout">
     <aside class="sidebar">
@@ -57,20 +58,64 @@
 
     <main class="main">
       <h2 class="page-title">CV</h2>
-      <p>Download my full CV here: <a href="assets/selin-yardimci-cv.pdf">CV (PDF)</a>. For a quick overview, see highlights below.</p>
+      <p>Download my full CV here: <a href="assets/selin-yardimci-cv.pdf">CV (PDF)</a>. For a quick overview, see the highlights below.</p>
 
+      <!-- HIGHLIGHTS SECTION -->
+      <section class="section">
+        <h3>Highlights</h3>
+        <div class="grid">
+
+          <div class="card">
+            <h4>Current Position</h4>
+            <p><strong>Temporary Lecturer and Research Assistant (ATER)</strong><br>
+            <em>University of Rennes · 2025 to present</em><br>
+            Teaching and research in applied microeconomics and industrial organization within the Center for Research in Economics and Management.</p>
+          </div>
+
+          <div class="card">
+            <h4>Research Focus</h4>
+            <p>Works on insidious strategies in digital markets, including ransomware, pricing algorithms and dark patterns. Combines theoretical modelling, simulation techniques and empirical data to study how digital practices influence competition and consumer vulnerability.</p>
+          </div>
+
+          <div class="card">
+            <h4>Recent Contributions</h4>
+            <p>Presented work at events such as the Annual AFSE Congress, the CEPR Paris Symposium and the HEC Liège Young Researchers Conference. Co organiser of the AFREN Workshop and the AFREN Summer School on Digital Economics.</p>
+          </div>
+
+          <div class="card">
+            <h4>Teaching Portfolio</h4>
+            <p>Delivers tutorials in microeconomics at all bachelor levels and teaches Python programming for masters in innovation management. Previous teaching includes Excel and economics in English for engineering students at CentraleSupélec.</p>
+          </div>
+
+          <div class="card">
+            <h4>Collaborative Research</h4>
+            <p>Member of the project Understanding the Role of Dark Patterns in Problematic Internet Use. Contributes to collective activities as PhD students representative and seminar co organiser at the EDGE Doctoral School.</p>
+          </div>
+
+          <div class="card">
+            <h4>Technical Skills</h4>
+            <p><strong>Programming:</strong> Python, Stata, Mathematica, LaTeX.  
+            <strong>Analytics:</strong> GA4, Looker Studio, Mixpanel.  
+            <strong>Web tools:</strong> HTML, CSS, tag management.  
+            <strong>Languages:</strong> English and French advanced, Turkish native.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ORIGINAL CONTENT -->
       <section class="section">
         <div class="card">
           <h3>Education</h3>
           <ul>
-            <li>PhD in Economics, CREM, University of Rennes — 2021–present</li>
-            <li>MSc in Economics — University, Year</li>
+            <li>PhD in Economics, CREM, University of Rennes · 2021 to present</li>
+            <li>MSc in Economics · University, Year</li>
           </ul>
         </div>
         <div class="card">
           <h3>Positions</h3>
           <ul>
-            <li>Assistant Lecturer (ATER), University of Rennes — until Sept 2026</li>
+            <li>Assistant Lecturer (ATER), University of Rennes · until Sept 2026</li>
           </ul>
         </div>
         <div class="card">
@@ -78,21 +123,37 @@
           <p>Applied microeconomics · Microeconometrics · Industrial organization</p>
         </div>
       </section>
+
     </main>
   </div>
 
   <script>
     (function(){
       const STORAGE_KEY='site-theme';
-      const prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const prefersDark=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
       const saved=localStorage.getItem(STORAGE_KEY);
       const root=document.documentElement;
-      function apply(t){t==='dark'?root.classList.add('dark'):root.classList.remove('dark');
-        const btn=document.getElementById('themeToggle'); if(btn) btn.setAttribute('aria-pressed', t==='dark'?'true':'false');}
-      apply(saved?saved:(prefersDark?'dark':'light'));
+
+      function apply(t){
+        if(t==='dark') root.classList.add('dark');
+        else root.classList.remove('dark');
+        const btn=document.getElementById('themeToggle');
+        if(btn) btn.setAttribute('aria-pressed', t==='dark' ? 'true' : 'false');
+      }
+
+      apply(saved ? saved : (prefersDark ? 'dark' : 'light'));
+
       const toggle=document.getElementById('themeToggle');
-      if(toggle){toggle.addEventListener('click',()=>{const next=root.classList.contains('dark')?'light':'dark';localStorage.setItem(STORAGE_KEY,next);apply(next);});}
-      const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+      if(toggle){
+        toggle.addEventListener('click', ()=>{
+          const next=root.classList.contains('dark') ? 'light' : 'dark';
+          localStorage.setItem(STORAGE_KEY,next);
+          apply(next);
+        });
+      }
+
+      const y=document.getElementById('year');
+      if(y) y.textContent=new Date().getFullYear();
     })();
   </script>
 </body>
